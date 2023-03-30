@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import '../models/plant_card_model.dart';
 import '../../../constants.dart';
 
 class RecomendsPlants extends StatelessWidget {
@@ -7,32 +7,43 @@ class RecomendsPlants extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<PlantCartModel> listPlants = [
+      PlantCartModel(
+          image: "https://image-us.eva.vn/upload/3-2022/images/2022-07-15/image13-1657867526-681-width1080height1007.jpg",
+          price: 440,
+          title: "Samantha",
+          country: "Russia"
+      ),
+      PlantCartModel(
+          image: "https://image-us.eva.vn/upload/3-2022/images/2022-07-15/image13-1657867526-681-width1080height1007.jpg",
+          price: 440,
+          title: "Samantha",
+          country: "Russia"
+      ),
+      PlantCartModel(
+          image: "https://image-us.eva.vn/upload/3-2022/images/2022-07-15/image13-1657867526-681-width1080height1007.jpg",
+          price: 440,
+          title: "Samantha",
+          country: "Russia"
+      ),
+      PlantCartModel(
+          image: "https://image-us.eva.vn/upload/3-2022/images/2022-07-15/image13-1657867526-681-width1080height1007.jpg",
+          price: 440,
+          title: "Samantha",
+          country: "Russia"
+      ),
+    ];
+
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
-        children: <Widget>[
-          RecomendPlantCard(
-            image: "https://image-us.eva.vn/upload/3-2022/images/2022-07-15/image13-1657867526-681-width1080height1007.jpg",
-            title: "Samantha",
-            country: "Russia",
-            price: 440,
-            press: () {},
-          ),
-          RecomendPlantCard(
-            image: "https://image-us.eva.vn/upload/3-2022/images/2022-07-15/image13-1657867526-681-width1080height1007.jpg",
-            title: "Angelica",
-            country: "Russia",
-            price: 440,
-            press: () {},
-          ),
-          RecomendPlantCard(
-            image: "https://image-us.eva.vn/upload/3-2022/images/2022-07-15/image13-1657867526-681-width1080height1007.jpg",
-            title: "Samantha",
-            country: "Russia",
-            price: 440,
-            press: () {},
-          ),
-        ],
+        children: listPlants.map((plant) => RecomendPlantCard(
+            image: plant.image,
+            title: plant.title,
+            country: plant.country,
+            price: plant.price,
+          press: (){},
+        )).toList(),
       ),
     );
   }
