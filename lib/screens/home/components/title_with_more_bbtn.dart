@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../../constants.dart';
 
 class TitleWithMoreBtn extends StatelessWidget {
@@ -18,7 +17,7 @@ class TitleWithMoreBtn extends StatelessWidget {
       child: Row(
         children: <Widget>[
           TitleWithCustomUnderline(text: title),
-          Spacer(),
+          const Spacer(),
           MaterialButton(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20),
